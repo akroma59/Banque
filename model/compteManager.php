@@ -30,6 +30,14 @@ class compteManager extends manager {
         var_dump($result);
 
     }
+    public function suppCompte($id) {
+        $db = $this->getDb();
+        $req = $db->prepare("DELETE FROM comptes WHERE id = $id");
+        $result = $req->execute([
+            "id" => $id,
+        ]);
+        return $result;
+    }
 
     //fontion qui modifie un compte
     // public function editCompte($id) {
@@ -45,7 +53,7 @@ class compteManager extends manager {
     //     return $result;
 
     // }
+    }
 
-}
 
 ?>

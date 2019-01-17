@@ -27,10 +27,11 @@ require "template/header.php";
             <td><?php echo $value["type"]; ?></td>
             <td><?php echo $value["nom"]; ?></td>
             <td><?php echo $value["somme"]; ?></td>
+            <td><a href="suppCompte?id=<?php echo $value["id"];?>" class="card-link"><i class="fa fa-trash" aria-hidden="true"></i></a></td>
+            <td><a href="detailCompte?id=<?php echo $value['id']; ?>" class="btn btn-primary">Detail</a></td>
+            <td></td>
             <td>
                 <!-- <a href="editCompte?id=<?php //echo $value['id']; ?>" class="btn btn-success">Modifier</a> -->
-                <a href="?id=<?php echo $value['id']; ?>" class="btn btn-danger">Supprimer</a>
-                <a href="detailCompte?id=<?php echo $value['id']; ?>" class="btn btn-primary">Detail</a>
             </td>
 
             </tr>

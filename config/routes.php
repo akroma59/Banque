@@ -18,9 +18,14 @@ function getRoutes() {
       "compte",
       "affichComptes"
     ],
-    "addCompte" =>[
+      "addCompte" =>[
+        "compte",
+        "ajoutCompte"
+      ],
+    "suppCompte" =>[
       "compte",
-      "ajoutCompte"
+      "supprimCompte",
+      ["id" => ["integer"]]
     ],
     "editCompte" =>[
       "compte",
