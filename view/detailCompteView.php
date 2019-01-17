@@ -4,7 +4,8 @@ require "template/header.php";
 
 ?>
 <div class="text-center">
-    <a href="addCompte">Nouveau Compte</a>
+    <a <?php setHref("addCompte"); ?> class="mr-5">Nouveau Compte</a>
+    <a <?php setHref(""); ?> class="ml-5">Retour à la liste</a>
 </div>
 <!-- <div class="d-flex justify-content-centeeditCompter mt-5"> -->
 
@@ -33,7 +34,7 @@ require "template/header.php";
                     <!-- <a href="editCompte?id=<?php //echo $compte['id']; ?>" class="btn btn-success">Modifier</a> -->
                     <a href="?id=<?php echo $compte['id']; ?>" class="btn btn-danger">Supprimer</a>
                     <a href="?id=<?php echo $compte['id']; ?>" class="btn btn-success">Virement</a>
-                    <a href="?id=<?php echo $compte['id']; ?>" class="btn btn-success">Retait</a>                
+                    <a href="retraitView.php?id=<?php echo $compte['id']; ?>" class="btn btn-success">Retait</a>                
                     <a href="?id=<?php echo $compte['id']; ?>" class="btn btn-success">Vesement</a>                
                 </td>
             </tr>

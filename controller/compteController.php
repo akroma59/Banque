@@ -7,7 +7,6 @@ class compteController
         $compteManager = new compteManager();
         $comptes = $compteManager->getComptes();
         require "view/listeCompteView.php";
-        var_dump($comptes);
     }
     public function affichCompte() {
         $compteManager = new compteManager();
