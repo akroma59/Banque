@@ -17,6 +17,10 @@ function getRoutes() {
     "" => [
       "compte",
       "affichComptes"
+    ],
+      "addCompte" =>[
+        "compte",
+        "ajoutCompte"
     ]
   ];
 }
