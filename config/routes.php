@@ -21,7 +21,12 @@ function getRoutes() {
       "addCompte" =>[
         "compte",
         "ajoutCompte"
-    ]
+      ],
+    "suppCompte" =>[
+      "compte",
+      "supprimCompte",
+      ["id" => ["integer"]]
+  ]
   ];
 }
 

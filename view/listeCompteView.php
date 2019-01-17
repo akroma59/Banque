@@ -14,6 +14,7 @@ require "template/header.php";
         <th scope="col">Type</th>
         <th scope="col">Nom</th>
         <th scope="col">Somme</th>
+        <th scope="col">Action</th>
         </tr>
     </thead>
     <tbody>
@@ -25,6 +26,9 @@ require "template/header.php";
             <td><?php echo $value["type"]; ?></td>
             <td><?php echo $value["nom"]; ?></td>
             <td><?php echo $value["somme"]; ?></td>
+            <td><a href="suppCompte?id=<?php echo $value["id"];?>" class="card-link"><i class="fa fa-trash" aria-hidden="true"></i></a></td>
+            <td><a href="updateUser?id=<?php echo $value["id"];?>" class="card-link"><i class="fa fa-address-card" aria-hidden="true"></i></a></td>
+            <td></td>
             </tr>
         <?php
             }
