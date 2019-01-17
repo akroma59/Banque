@@ -9,6 +9,14 @@ class compteManager extends manager {
         return $result;
     }
 
+    public function getCompte($id) {
+        $db = $this->getDb();
+        $req = $db->prepare("SELECT * FROM comptes WHERE id = ?");
+        $req->execute([$id]);
+        $result = $req->fetch(PDO::FETCH_ASSOC);
+        return $result;
+    }
+
     //fonction qui ajoute un compte
     public function addCompte(compte $compte) {
         $db = $this->getDb();
@@ -22,6 +30,21 @@ class compteManager extends manager {
         var_dump($result);
 
     }
+
+    //fontion qui modifie un compte
+    // public function editCompte($id) {
+    //     $db = $this->getDb();
+    //     $id =  $_GET["id"];
+    //     $req = $db->prepare("UPDATE comptes SET nom = :nom, type = :type, somme = :somme WHERE id = :id");
+    //     $result = $req->execute([
+    //         "nom" => $compte->getNom(),
+    //         "type" => $compte->getType(),
+    //         "somme" => $compte->getSomme(),
+    //         "id" => $id
+    //     ]);
+    //     return $result;
+
+    // }
 
 }
 

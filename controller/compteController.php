@@ -8,22 +8,34 @@ class compteController
         $comptes = $compteManager->getComptes();
         require "view/listeCompteView.php";
     }
+    public function affichCompte() {
+        $compteManager = new compteManager();
+        $id = htmlspecialchars($_GET["id"]);
+        $compte = $compteManager->getCompte($id);
+        require "view/detailCompteView.php";
+    }
 
     public function ajoutCompte() {
-        $compteManager1 = new compteManager();
+        $compteManager = new compteManager();
         if (!empty($_POST)) {
             $compte = new compte($_POST);  
-            $compteManager1->addCompte($compte);
-
-            var_dump($compte);
+            $compteManager->addCompte($compte);
+            redirectTo("");   
         }
-        
-        // header("location: index.php");
-        // exit;
         require "view/addCompteView.php";
 
     }
 
+    // public function modifCompte() {
+    //     $compteManager = new compteManager();
+    //     if (!empty($_POST)) {
+    //         $compte = new compte($_POST);  
+    //         $compteManager->editCompte($id);
+    //         redirectTo("");       
+    //     }
+    //     require "view/editCompteView.php";
+    // }
+    
 }
 
 ?>
