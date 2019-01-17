@@ -33,15 +33,15 @@ class compteController
         redirectTo("");
     }
 
-    // public function modifCompte() {
-    //     $compteManager = new compteManager();
-    //     if (!empty($_POST)) {
-    //         $compte = new compte($_POST);  
-    //         $compteManager->editCompte($id);
-    //         redirectTo("");       
-    //     }
-    //     require "view/editCompteView.php";
-    // }
+    public function modifSomme() {
+        $compteManager = new compteManager();
+        if (!empty($_POST)) {
+            $compte = new compte($_POST);  
+            $compte = $compteManager->updateSomme($id);
+            redirectTo("");       
+        }
+        require "view/updateMoneyView.php";
+    }
     
 }
 
