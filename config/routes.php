@@ -15,12 +15,12 @@
 function getRoutes() {
   return [
     "" => [
-      "exemple",
-      "welcome"
+      "compte",
+      "affichComptes"
     ],
-    "login" => [
-      "admin",
-      "loginUser",
+      "addCompte" =>[
+        "compte",
+        "ajoutCompte"
     ]
   ];
 }
