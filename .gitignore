@@ -3,4 +3,8 @@
 # Useful .gitignore templates: https://github.com/github/gitignore
 
 model/dataBase.php
+<<<<<<< HEAD
 config/global.php
+=======
+config/global.php
+>>>>>>> edbd457c2fc6a86b6fce82709ee52d5efc396d5c
