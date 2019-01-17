@@ -7,6 +7,7 @@ class compteController
         $compteManager = new compteManager();
         $comptes = $compteManager->getComptes();
         require "view/listeCompteView.php";
+        var_dump($comptes);
     }
     public function affichCompte() {
         $compteManager = new compteManager();
@@ -24,6 +25,12 @@ class compteController
         }
         require "view/addCompteView.php";
 
+    }
+    public function supprimCompte(){
+        $compteManager = new compteManager();
+        $id = htmlspecialchars($_GET["id"]);
+        $compteManager->suppCompte($id);
+        redirectTo("");
     }
 
     // public function modifCompte() {
