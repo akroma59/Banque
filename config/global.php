@@ -3,7 +3,7 @@
 function getGlobalConfig() {
   return $config = [
     "protocol" => "",
-    "host" => "localhost/Lab/microFrameworkObjet/",
+    "host" => "localhost/LAB/Banque/",
     "status" => ["anonymous", "user", "admin"],
     "defaultRoute" => ""
   ];
