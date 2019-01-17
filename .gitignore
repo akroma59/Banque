@@ -1,4 +1,8 @@
 # Include your project-specific ignores in this file
 # Read about how to use .gitignore: https://help.github.com/articles/ignoring-files
 # Useful .gitignore templates: https://github.com/github/gitignore
+<<<<<<< HEAD
 model/dataBase.php
+=======
+model/dataBase.php
+>>>>>>> 09296c31fc837b333eaad305f7dd1f32cbf2f9bc
