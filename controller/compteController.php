@@ -26,14 +26,12 @@ class compteController
         require "view/addCompteView.php";
 
     }
-<<<<<<< HEAD
     public function supprimCompte(){
         $compteManager = new compteManager();
         $id = htmlspecialchars($_GET["id"]);
         $compteManager->suppCompte($id);
         redirectTo("");
     }
-=======
 
     // public function modifCompte() {
     //     $compteManager = new compteManager();
@@ -45,7 +43,6 @@ class compteController
     //     require "view/editCompteView.php";
     // }
     
->>>>>>> edbd457c2fc6a86b6fce82709ee52d5efc396d5c
 }
 
 ?>

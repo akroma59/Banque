@@ -11,9 +11,6 @@ require "template/header.php";
     <?php
             if ($id === $_GET["id"]) { 
     ?>
-        <div class="text-center">
-            <a href="addCompte">Nouveau Compte</a>
-        </div>
         <div class="d-flex justify-content-centeeditCompter mt-5">
             <table class="table table-dark col-7 col-md-7 col-lg-7">
             <thead>

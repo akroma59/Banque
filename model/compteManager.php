@@ -38,10 +38,8 @@ class compteManager extends manager {
         ]);
         return $result;
         var_dump($result);
-
-<<<<<<< HEAD
     }
-=======
+
     //fontion qui modifie un compte
     // public function editCompte($id) {
     //     $db = $this->getDb();
@@ -56,8 +54,7 @@ class compteManager extends manager {
     //     return $result;
 
     // }
+    }
 
->>>>>>> edbd457c2fc6a86b6fce82709ee52d5efc396d5c
-}
 
 ?>
