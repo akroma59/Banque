@@ -41,7 +41,7 @@ class compteController
             $finalSomme = $compte->getSomme() + $_POST['somme'];
             $compte->setSomme($finalSomme);
             $compteManager->updateSomme($compte);  
-            var_dump($_POST);
+            redirectTo("");
         }
         // var_dump ($compteManager->getCompte($id));
         require "view/updateSommeView.php";

@@ -25,16 +25,16 @@ require "template/header.php";
             </thead>
             <tbody>
             <tr>
-                <th scope="row"><?php echo $compte["id"]; ?></th>
-                <td><?php echo $compte["type"]; ?></td>
-                <td><?php echo $compte["nom"]; ?></td>
-                <td><?php echo $compte["somme"]; ?></td>
+                <th scope="row"><?php echo $compte->getId(); ?></th>
+                <td><?php echo $compte->getType(); ?></td>
+                <td><?php echo $compte->getNom(); ?></td>
+                <td><?php echo $compte->getSomme(); ?></td>
                 <td>
                     <!-- <a href="editCompte?id=<?php //echo $compte['id']; ?>" class="btn btn-success">Modifier</a> -->
-                    <a href="?id=<?php echo $compte['id']; ?>" class="btn btn-danger">Supprimer</a>
-                    <a href="?id=<?php echo $compte['id']; ?>" class="btn btn-success">Virement</a>
-                    <a href="?id=<?php echo $compte['id']; ?>" class="btn btn-success">Retait</a>                
-                    <a href="updateSomme?id=<?php echo $compte['id']; ?>" class="btn btn-success">Vesement</a>                
+                    <a href="?id=<?php echo $compte->getId(); ?>" class="btn btn-danger">Supprimer</a>
+                    <a href="?id=<?php echo $compte->getId(); ?>" class="btn btn-success">Virement</a>
+                    <a href="?id=<?php echo $compte->getId(); ?>" class="btn btn-success">Retait</a>                
+                    <a href="updateSomme?id=<?php echo $compte->getId(); ?>" class="btn btn-success">Vesement</a>                
                 </td>
             </tr>
     </tbody>
