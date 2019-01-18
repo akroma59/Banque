@@ -33,16 +33,15 @@ class compteController
     }
 
     public function modifSomme() {
-        $compteManager = new compteManager;
-        $id = htmlspecialchars($_GET["id"]);
+        $compteManager = new compteManager();
+        $id = $_GET["id"];
+        $compte = $compteManager->getCompte($id);
+
         if (!empty($_POST)) {
-            $compte = $compteManager->getCompte($id);
-            $finalSomme = $compte->getSomme() + $_POST['somme'];
-            $compte->setSomme($finalSomme);
-            $compteManager->updateSomme($compte);  
+            $compte->versement($_POST["somme"]);
+            $compteManager->updateSomme($compte);
             redirectTo("");
         }
-        // var_dump ($compteManager->getCompte($id));
         require "view/updateSommeView.php";
         
     }
@@ -50,15 +49,33 @@ class compteController
     //fonction qui fait les retrait
     public function retraitSomme() {
         $compteManager = new compteManager();
+        $id = $_GET["id"];
+        $compte = $compteManager->getCompte($id);
+
         if (!empty($_POST)) {
-            $id = $_GET["id"];
-            $compte = $compteManager->getCompte($id);
-            $finalSomme = $compte->getSomme() - $_POST['somme'];
-            $compte->setSomme($finalSomme);
+            $compte->retrait($_POST['somme']);
             $compteManager->updateSomme($compte);
             redirectTo("");
         }
         require "view/retraitView.php";
     }
+
+    //fonction qui fait un virement
+    public function virementSomme() {
+        $compteManager = new compteManager();
+        $idSender = $_GET["id"];
+        $compteSender = $compteManager->getCompte($idSender);
+
+        if (!empty($_POST)) {
+            $idGetter = $_POST["id"];
+            $compteGetter = $compteManager->getCompte($idGetter);
+            $compteSender->retrait($_POST["somme"]);
+            $compteGetter->versement($_POST["somme"]);
+            $compteManager->updateSomme($compteSender);
+            $compteManager->updateSomme($compteGetter);
+            redirectTo("");
+        }
+        require "view/virementView.php";
+    }    
 }
 ?>
