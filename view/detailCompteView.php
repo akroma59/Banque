@@ -35,7 +35,7 @@ require "template/header.php";
                     <a href="?id=<?php echo $compte['id']; ?>" class="btn btn-danger">Supprimer</a>
                     <a href="?id=<?php echo $compte['id']; ?>" class="btn btn-success">Virement</a>
                     <a href="retraitView.php?id=<?php echo $compte['id']; ?>" class="btn btn-success">Retait</a>                
-                    <a href="?id=<?php echo $compte['id']; ?>" class="btn btn-success">Vesement</a>                
+                    <a href="updateSomme?id=<?php echo $compte['id']; ?>" class="btn btn-success">Vesement</a>                
                 </td>
             </tr>
     </tbody>

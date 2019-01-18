@@ -30,7 +30,7 @@ public function getSomme(){
     return $this->somme;
 }
 
-public function __construct($data) {
+public function __construct(array $data) {
     $this->hydrate($data);
 }
 }

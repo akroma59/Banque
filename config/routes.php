@@ -5,7 +5,7 @@
 //Modèle des routes
 //"NomDeLaRoute" => [
 //  "Controller",
-//  "Fonction",
+//  "Fonction du controlleur",
 //  Optionnel [
 //    "parametre1" => ["typeAttendu", optionnel[valeurAttendu]],
 //    "parametre2" => ["typeAttendu", optionnel[valeurAttendu]]
@@ -27,9 +27,9 @@ function getRoutes() {
       "supprimCompte",
       ["id" => ["integer"]]
     ],
-    "editCompte" =>[
+    "updateSomme" =>[
       "compte",
-      "modifCompte",
+      "modifSomme",
       ["id" => ["integer"]]
     ],
     "detailCompte" => [

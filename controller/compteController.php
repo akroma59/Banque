@@ -32,15 +32,20 @@ class compteController
         redirectTo("");
     }
 
-    // public function modifCompte() {
-    //     $compteManager = new compteManager();
-    //     if (!empty($_POST)) {
-    //         $compte = new compte($_POST);  
-    //         $compteManager->editCompte($id);
-    //         redirectTo("");       
-    //     }
-    //     require "view/editCompteView.php";
-    // }
+    public function modifSomme() {
+        $compteManager = new compteManager;
+        $id = htmlspecialchars($_GET["id"]);
+        if (!empty($_POST)) {
+            $compte = $compteManager->getCompte($id);
+            $finalSomme = $compte->getSomme() + $_POST['somme'];
+            $compte->setSomme($finalSomme);
+            $compteManager->updateSomme($compte);  
+            var_dump($_POST);
+        }
+        // var_dump ($compteManager->getCompte($id));
+        require "view/updateSommeView.php";
+        
+    }
     
 }
 
