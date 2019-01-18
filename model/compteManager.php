@@ -27,7 +27,6 @@ class compteManager extends manager {
             "somme" => $compte->getSomme()
         ]);
         return $result;
-        var_dump($result);
 
     }
     public function suppCompte($id) {

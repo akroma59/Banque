@@ -41,7 +41,11 @@ function getRoutes() {
       "compte",
       "retraitSomme",
       ["id" => ["integer"]],
-    //   ["action" => ["string"]]
+    ],
+    "virement" => [
+      "compte",
+      "virementSomme",
+      ["id" => ["integer"]],
     ]
   ];
 }
