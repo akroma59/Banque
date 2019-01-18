@@ -7,7 +7,6 @@ class compteController
         $compteManager = new compteManager();
         $comptes = $compteManager->getComptes();
         require "view/listeCompteView.php";
-        var_dump($comptes);
     }
     public function affichCompte() {
         $compteManager = new compteManager();
@@ -48,6 +47,18 @@ class compteController
         
     }
     
+    //fonction qui fait les retrait
+    public function retraitSomme() {
+        $compteManager = new compteManager();
+        if (!empty($_POST)) {
+            $id = $_GET["id"];
+            $compte = $compteManager->getCompte($id);
+            $finalSomme = $compte->getSomme() - $_POST['somme'];
+            $compte->setSomme($finalSomme);
+            $compteManager->updateSomme($compte);
+            redirectTo("");
+        }
+        require "view/retraitView.php";
+    }
 }
-
 ?>

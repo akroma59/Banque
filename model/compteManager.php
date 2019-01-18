@@ -37,7 +37,6 @@ class compteManager extends manager {
             "id" => $id,
         ]);
         return $result;
-        var_dump($result);
     }
 
     // fontion qui modifie un compte
@@ -55,6 +54,5 @@ class compteManager extends manager {
 
     }
     }
-
 
 ?>

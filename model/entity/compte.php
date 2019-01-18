@@ -30,6 +30,10 @@ public function getSomme(){
     return $this->somme;
 }
 
+public function retrait($somme) {
+    $this->somme -= $somme;
+}
+
 public function __construct(array $data) {
     $this->hydrate($data);
 }
