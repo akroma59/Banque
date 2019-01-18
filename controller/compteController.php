@@ -34,13 +34,18 @@ class compteController
     }
 
     public function modifSomme() {
-        $compteManager = new compteManager();
+        $compteManager = new compteManager;
+        $id = htmlspecialchars($_GET["id"]);
         if (!empty($_POST)) {
-            $compte = new compte($_POST);  
-            $compte = $compteManager->updateSomme($id);
-            redirectTo("");       
+            $compte = $compteManager->getCompte($id);
+            $finalSomme = $compte->getSomme() + $_POST['somme'];
+            $compte->setSomme($finalSomme);
+            $compteManager->updateSomme($compte);  
+            var_dump($_POST);
         }
-        require "view/updateMoneyView.php";
+        // var_dump ($compteManager->getCompte($id));
+        require "view/updateSommeView.php";
+        
     }
     
 }

@@ -14,7 +14,7 @@ class compteManager extends manager {
         $req = $db->prepare("SELECT * FROM comptes WHERE id = ?");
         $req->execute([$id]);
         $result = $req->fetch(PDO::FETCH_ASSOC);
-        return $result;
+        return new compte($result);
     }
 
     //fonction qui ajoute un compte
@@ -41,12 +41,15 @@ class compteManager extends manager {
     }
 
     // fontion qui modifie un compte
-    public function updateSomme($id) {
+    public function updateSomme(compte $compte) {
         $db = $this->getDb();
         $id =  $_GET["id"];
-        $req = $db->prepare("UPDATE comptes SET somme = :somme WHERE somme = ?");
+        $req = $db->prepare("UPDATE comptes SET nom = :nom, type = :type, somme = :somme WHERE id = :id");
         $result = $req->execute([
+            "nom" => $compte->getNom(),
+            "type" => $compte->getType(),
             "somme" => $compte->getSomme(),
+            "id" => $compte->getId(),
         ]);
         return $result;
 
