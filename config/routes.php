@@ -27,15 +27,21 @@ function getRoutes() {
       "supprimCompte",
       ["id" => ["integer"]]
     ],
-    "editCompte" =>[
+    "modifSomme" =>[
       "compte",
-      "modifCompte",
+      "updateSomme",
       ["id" => ["integer"]]
     ],
     "detailCompte" => [
       "compte",
       "affichCompte",
       ["id" => ["integer"]]
+    ],
+    "retrait" => [
+      "compte",
+      "retraitSomme",
+      ["id" => ["integer"]],
+    //   ["action" => ["string"]]
     ]
   ];
 }

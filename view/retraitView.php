@@ -1,7 +1,7 @@
 <?php
 
 require "template/header.php";
-require "form/retaitForm.php";
+require "form/retraitForm.php";
 require "template/footer.php";
 
 ?>

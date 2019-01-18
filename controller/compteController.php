@@ -32,16 +32,28 @@ class compteController
         redirectTo("");
     }
 
-    // public function modifCompte() {
-    //     $compteManager = new compteManager();
-    //     if (!empty($_POST)) {
-    //         $compte = new compte($_POST);  
-    //         $compteManager->editCompte($id);
-    //         redirectTo("");       
-    //     }
-    //     require "view/editCompteView.php";
-    // }
+    public function modifSomme() {
+        $compteManager = new compteManager();
+        if (!empty($_POST)) {
+            $compte = new compte($_POST);  
+            $compte = $compteManager->updateSomme($id);
+            redirectTo("");       
+        }
+        require "view/updateMoneyView.php";
+    }
     
-}
+    //fonction qui fait les retrait
+    public function retraitSomme() {
+        $compteManager = new compteManager();
+        if (!empty($_POST)) {
+            $id = $_GET["id"];
 
+            $compte = $compteManager->updateSomme($id, $_POST);
+            $compte["somme"] -= $_POST["somme"];
+            redirectTo("");
+        }
+        require "view/retraitView.php";
+    }
+}
+// && $_GET["action"] === "retrait"
 ?>
