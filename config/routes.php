@@ -36,6 +36,12 @@ function getRoutes() {
       "compte",
       "affichCompte",
       ["id" => ["integer"]]
+    ],
+    "retrait" => [
+      "compte",
+      "retraitSomme",
+      ["id" => ["integer"]],
+    //   ["action" => ["string"]]
     ]
   ];
 }
