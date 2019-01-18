@@ -33,10 +33,9 @@ require "template/header.php";
                 <td>
                     <!-- <a href="editCompte?id=<?php //echo $compte['id']; ?>" class="btn btn-success">Modifier</a> -->
                     <a href="?id=<?php echo $compte->getId(); ?>" class="btn btn-danger">Supprimer</a>
-                    <a href="?id=<?php echo $compte->getId(); ?>" class="btn btn-success">Virement</a>
+                    <a <?php setHref('virement',['id' => $compte->getId()]); ?> class="btn btn-success">Virement</a>
                     <a <?php setHref('retrait', ['id' => $compte->getId()]); ?> class="btn btn-success">Retait</a>                
-                    <!-- , 'action' => 'retrait' -->        
-                    <a href="updateSomme?id=<?php echo $compte->getId(); ?>" class="btn btn-success">Vesement</a>                
+                    <a href="updateSomme?id=<?php echo $compte->getId(); ?>" class="btn btn-success">Versement</a>                
                 </td>
             </tr>
     </tbody>
